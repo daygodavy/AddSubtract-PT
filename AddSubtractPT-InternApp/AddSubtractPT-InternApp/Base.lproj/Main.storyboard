@@ -7,96 +7,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AddSubtractPT_InternApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1cf-ru-Xxc">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
-                                <color key="backgroundColor" red="0.83481116607884753" green="1" blue="0.83822341971082182" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7j1-hr-kLL">
-                                <rect key="frame" x="20" y="191" width="374" height="10"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="10" id="upV-YK-WO8"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Student" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fAH-n4-Drp">
-                                <rect key="frame" x="20" y="149" width="374" height="44"/>
-                                <color key="tintColor" red="0.10880718609999999" green="0.42011024749999998" blue="0.083081020790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="38"/>
-                                <color key="textColor" red="0.10880718609999999" green="0.42011024749999998" blue="0.083081020790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="book.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ewy-rx-1Zw">
-                                <rect key="frame" x="95" y="61.5" width="224" height="79"/>
-                                <color key="tintColor" red="0.10880718609999999" green="0.42011024749999998" blue="0.083081020790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="X01-6f-9do"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rl4-aV-PTd">
-                                <rect key="frame" x="-7" y="640" width="429" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <color key="tintColor" red="0.5" green="0.25893932110000001" blue="0.082231938919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Subtraction (-)" backgroundImage="stop" catalog="system">
-                                    <color key="titleColor" red="0.10880718609999999" green="0.42011024749999998" blue="0.083081020790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGJ-yd-zP7">
-                                <rect key="frame" x="-7" y="515" width="429" height="113"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="35"/>
-                                <color key="tintColor" red="0.5" green="0.25893932110000001" blue="0.082231938919999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Addition (+)" backgroundImage="stop" catalog="system">
-                                    <color key="titleColor" red="0.10880718609999999" green="0.42011024749999998" blue="0.083081020790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="plus.magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pZb-2t-jNr">
-                                <rect key="frame" x="241" y="395" width="59" height="82"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xgz-AD-fGa">
-                                <rect key="frame" x="-52" y="379" width="420" height="101"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="51"/>
-                                <color key="tintColor" red="0.10880718609999999" green="0.42011024749999998" blue="0.083081020790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Addition " backgroundImage="capsule" catalog="system">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="0.10880718609999999" green="0.42011024749999998" blue="0.083081020790000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="7j1-hr-kLL" firstAttribute="leading" secondItem="fAH-n4-Drp" secondAttribute="leading" id="65k-16-Ffj"/>
-                            <constraint firstItem="ewy-rx-1Zw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="17" id="75A-Kh-0vM"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1cf-ru-Xxc" secondAttribute="trailing" constant="20" id="AMA-Ad-BKl"/>
-                            <constraint firstItem="7j1-hr-kLL" firstAttribute="trailing" secondItem="1cf-ru-Xxc" secondAttribute="trailing" id="B3H-3s-rNc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1cf-ru-Xxc" secondAttribute="bottom" id="IMl-xd-bxo"/>
-                            <constraint firstItem="fAH-n4-Drp" firstAttribute="top" secondItem="ewy-rx-1Zw" secondAttribute="bottom" constant="8" id="NSu-18-c4K"/>
-                            <constraint firstItem="1cf-ru-Xxc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="apP-WZ-cIz"/>
-                            <constraint firstItem="ewy-rx-1Zw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="95" id="bsR-lt-IPO"/>
-                            <constraint firstItem="7j1-hr-kLL" firstAttribute="leading" secondItem="1cf-ru-Xxc" secondAttribute="trailing" constant="-374" id="c65-VV-eUx"/>
-                            <constraint firstItem="7j1-hr-kLL" firstAttribute="trailing" secondItem="fAH-n4-Drp" secondAttribute="trailing" id="d85-OO-Cr2"/>
-                            <constraint firstItem="7j1-hr-kLL" firstAttribute="top" secondItem="fAH-n4-Drp" secondAttribute="bottom" constant="-2" id="mQ2-eB-Bnz"/>
-                            <constraint firstItem="1cf-ru-Xxc" firstAttribute="top" secondItem="fAH-n4-Drp" secondAttribute="bottom" constant="-149" id="nnm-IN-Sbt"/>
-                            <constraint firstItem="ewy-rx-1Zw" firstAttribute="centerX" secondItem="fAH-n4-Drp" secondAttribute="centerX" id="oyx-Yu-BIJ"/>
-                            <constraint firstItem="1cf-ru-Xxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="w4s-Gh-Egy"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="138.61607142857142"/>
-        </scene>
         <!--Intro View Controller-->
         <scene sceneID="0cn-31-FMB">
             <objects>
@@ -213,7 +123,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fLq-PD-RlC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="793.52678571428567"/>
+            <point key="canvasLocation" x="833" y="-206"/>
         </scene>
         <!--Problem Solve View Controller-->
         <scene sceneID="ie9-Cl-lV3">
@@ -487,7 +397,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tyl-kH-G7m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314.4927536231885" y="130.58035714285714"/>
+            <point key="canvasLocation" x="1712" y="-205"/>
         </scene>
     </scenes>
     <resources>
@@ -497,9 +407,7 @@
         <image name="checkmark.seal.fill" catalog="system" width="64" height="60"/>
         <image name="gobackward" catalog="system" width="60" height="64"/>
         <image name="pano" catalog="system" width="64" height="40"/>
-        <image name="plus.magnifyingglass" catalog="system" width="64" height="56"/>
         <image name="plusminus.circle.fill" catalog="system" width="64" height="60"/>
-        <image name="stop" catalog="system" width="64" height="56"/>
         <image name="xmark.seal.fill" catalog="system" width="64" height="60"/>
     </resources>
 </document>

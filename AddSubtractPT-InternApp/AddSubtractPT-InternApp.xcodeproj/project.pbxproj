@@ -12,7 +12,6 @@
 		5B6FEBCA2453D5C000EFEA1D /* ProblemSolveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FEBC92453D5C000EFEA1D /* ProblemSolveViewController.swift */; };
 		5BBF19D92452E07800567856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF19D82452E07800567856 /* AppDelegate.swift */; };
 		5BBF19DB2452E07800567856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF19DA2452E07800567856 /* SceneDelegate.swift */; };
-		5BBF19DD2452E07800567856 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF19DC2452E07800567856 /* ViewController.swift */; };
 		5BBF19E02452E07800567856 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BBF19DE2452E07800567856 /* Main.storyboard */; };
 		5BBF19E32452E07800567856 /* AddSubtractPT_InternApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF19E12452E07800567856 /* AddSubtractPT_InternApp.xcdatamodeld */; };
 		5BBF19E52452E07A00567856 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BBF19E42452E07A00567856 /* Assets.xcassets */; };
@@ -45,7 +44,6 @@
 		5BBF19D52452E07800567856 /* AddSubtractPT-InternApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AddSubtractPT-InternApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBF19D82452E07800567856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BBF19DA2452E07800567856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5BBF19DC2452E07800567856 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BBF19DF2452E07800567856 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BBF19E22452E07800567856 /* AddSubtractPT_InternApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AddSubtractPT_InternApp.xcdatamodel; sourceTree = "<group>"; };
 		5BBF19E42452E07A00567856 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -84,6 +82,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5B989DA42454DC8800C06052 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B6FEBC52453B23A00EFEA1D /* IntroViewController.swift */,
+				5B6FEBC92453D5C000EFEA1D /* ProblemSolveViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5B989DA52454DC9300C06052 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B6FEBC72453D5A400EFEA1D /* MathEqnsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		5BBF19CC2452E07800567856 = {
 			isa = PBXGroup;
 			children = (
@@ -107,17 +122,15 @@
 		5BBF19D72452E07800567856 /* AddSubtractPT-InternApp */ = {
 			isa = PBXGroup;
 			children = (
+				5B989DA52454DC9300C06052 /* Models */,
+				5B989DA42454DC8800C06052 /* ViewControllers */,
+				5BBF19DE2452E07800567856 /* Main.storyboard */,
 				5BBF19D82452E07800567856 /* AppDelegate.swift */,
 				5BBF19DA2452E07800567856 /* SceneDelegate.swift */,
-				5BBF19DC2452E07800567856 /* ViewController.swift */,
-				5BBF19DE2452E07800567856 /* Main.storyboard */,
 				5BBF19E42452E07A00567856 /* Assets.xcassets */,
 				5BBF19E62452E07A00567856 /* LaunchScreen.storyboard */,
 				5BBF19E92452E07A00567856 /* Info.plist */,
 				5BBF19E12452E07800567856 /* AddSubtractPT_InternApp.xcdatamodeld */,
-				5B6FEBC52453B23A00EFEA1D /* IntroViewController.swift */,
-				5B6FEBC72453D5A400EFEA1D /* MathEqnsModel.swift */,
-				5B6FEBC92453D5C000EFEA1D /* ProblemSolveViewController.swift */,
 			);
 			path = "AddSubtractPT-InternApp";
 			sourceTree = "<group>";
@@ -272,7 +285,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B6FEBCA2453D5C000EFEA1D /* ProblemSolveViewController.swift in Sources */,
-				5BBF19DD2452E07800567856 /* ViewController.swift in Sources */,
 				5BBF19E32452E07800567856 /* AddSubtractPT_InternApp.xcdatamodeld in Sources */,
 				5B6FEBC62453B23A00EFEA1D /* IntroViewController.swift in Sources */,
 				5BBF19D92452E07800567856 /* AppDelegate.swift in Sources */,

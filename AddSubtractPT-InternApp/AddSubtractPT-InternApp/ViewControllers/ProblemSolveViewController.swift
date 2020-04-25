@@ -11,24 +11,18 @@ import UIKit
 class ProblemSolveViewController: UIViewController {
     @IBOutlet weak var chalkboardBG: UIView!
     @IBOutlet weak var gameoverBG: UIView!
-    
     @IBOutlet weak var correctCountLabel: UILabel!
     @IBOutlet weak var wrongCountLabel: UILabel!
-    
     @IBOutlet weak var firstNumLabel: UILabel!
     @IBOutlet weak var secondNumLabel: UILabel!
-    @IBOutlet weak var solutionNumLabel: UILabel! //
-    
+    @IBOutlet weak var solutionNumLabel: UILabel!
     @IBOutlet weak var eqnTypeLabel: UILabel!
-    
     @IBOutlet weak var finalScoreLabel: UILabel!
     @IBOutlet weak var startOverLabel: UIButton!
-    
     @IBOutlet var answerButtons: [UIButton]!
     
     var correctCounter: Int = 0
     var wrongCounter: Int = 0
-    
     var currEqn: MathEqn = MathEqn()
     
     
@@ -38,6 +32,7 @@ class ProblemSolveViewController: UIViewController {
         self.setupLabels()
     }
     
+    // configure UI elements for this view
     func setupView() {
         for button in self.answerButtons {
             button.layer.shadowColor = UIColor.black.cgColor
@@ -54,12 +49,9 @@ class ProblemSolveViewController: UIViewController {
         self.wrongCountLabel.layer.shadowOffset = CGSize(width: 2, height: 2)
         self.wrongCountLabel.layer.shadowRadius = 3
         self.wrongCountLabel.layer.shadowOpacity = 1.0
-        
-
-        
-        
     }
     
+    // configure titles/texts for labels/buttons in this view
     func setupLabels() {
         self.correctCountLabel.text! = "0"
         self.wrongCountLabel.text! = "0"
@@ -80,6 +72,7 @@ class ProblemSolveViewController: UIViewController {
         }
     }
     
+    // checks if user selected choice is correct answer
     func checkAnswer(idx: Int) {
         self.solutionNumLabel.text! = String(self.currEqn.solution)
         if let check = self.answerButtons[idx].titleLabel?.text {
@@ -95,6 +88,7 @@ class ProblemSolveViewController: UIViewController {
         }
     }
     
+    // checks if the selected choice matches the actual solution
     func matchAnswer(ans: Int) -> Bool {
         if ans == self.currEqn.solution {
             return true
@@ -102,6 +96,7 @@ class ProblemSolveViewController: UIViewController {
         return false
     }
     
+    // user answered correctly, update accordingly
     func setCorrectAnswer(idx: Int) {
         self.answerButtons[idx].setTitleColor(UIColor.green, for: .normal)
         
@@ -115,8 +110,7 @@ class ProblemSolveViewController: UIViewController {
             self.initiateGameOver()
         }
         
-        
-        // delay (3sec) then reset and initiate next matheqn
+        // delay (3sec) then reset and initiate next math eqn
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
             self.solutionNumLabel.text = ""
@@ -125,14 +119,13 @@ class ProblemSolveViewController: UIViewController {
             
             for button in self.answerButtons { button.isUserInteractionEnabled = true }
         }
-        
-        
     }
     
+    // user answer incorrectly, update accordingly
     func setIncorrectAnswer(idx: Int) {
         self.answerButtons[idx].setTitleColor(UIColor.red, for: .normal)
         
-        // increment decrement counter
+        // increment wrong counter
         self.wrongCounter += 1
         self.wrongCountLabel.text = String(self.wrongCounter)
         
@@ -142,7 +135,7 @@ class ProblemSolveViewController: UIViewController {
             self.initiateGameOver()
         }
         else {
-            // delay (3sec) then reset and initiate next matheqn
+            // delay (3sec) then reset and initiate next math eqn
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
                 self.solutionNumLabel.text = ""
@@ -155,6 +148,7 @@ class ProblemSolveViewController: UIViewController {
         
     }
     
+    // generate new eqn for next problem
     func regenNewEqn() {
         if self.currEqn.eqnType {
             // generate new addition problem
@@ -173,6 +167,7 @@ class ProblemSolveViewController: UIViewController {
         }
     }
     
+    // when 10 problems answered, initiate game over
     func initiateGameOver() {
         self.setupGameoverView()
         for button in self.answerButtons { button.isHidden = true }
@@ -184,6 +179,7 @@ class ProblemSolveViewController: UIViewController {
         self.gameoverBG.isHidden = false
     }
     
+    // configure gameover sub view
     func setupGameoverView() {
         self.gameoverBG.layer.cornerRadius = 10
         self.gameoverBG.clipsToBounds = true
@@ -194,34 +190,30 @@ class ProblemSolveViewController: UIViewController {
         
         self.startOverLabel.layer.shadowColor = UIColor.black.cgColor
         self.startOverLabel.layer.shadowRadius = 3
-//        self.startOverLabel.layer.shadowOffset
         self.startOverLabel.layer.shadowOpacity = 0.2
     }
     
+    // determine users' selected answer
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         for button in self.answerButtons { button.isUserInteractionEnabled = false }
         
         switch sender.tag {
         case 0:
-            print("A")
             self.checkAnswer(idx: 0)
         case 1:
             self.checkAnswer(idx: 1)
-            print("B")
         case 2:
             self.checkAnswer(idx: 2)
-            print("C")
         case 3:
             self.checkAnswer(idx: 3)
-            print("D")
         default:
             break
         }
-        print("DONE")
     }
     
+    // segues to intro view when user selects start over
     @IBAction func startoverButtonPressed(_ sender: Any) {
-         presentingViewController?.dismiss(animated: true, completion: nil)
+        presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     

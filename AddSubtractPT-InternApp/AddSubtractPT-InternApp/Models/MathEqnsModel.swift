@@ -31,12 +31,13 @@ class MathEqn {
     }
     
     init(choseAdd: Bool) {
+        // randomize two numbers for the equation from 0 to 999
         self.firstNum = Int.random(in: minNum ... maxNum)
         self.secondNum = Int.random(in: minNum ... maxNum)
         self.multChoiceOptions = Array(repeating: 0, count: 4)
         self.eqnType = choseAdd
         
-        // create solution based on user's selection of add or subtract
+        // compute solution based on user's selection of add or subtract
         if choseAdd {
             self.solution = self.firstNum + self.secondNum
         }
@@ -60,6 +61,4 @@ class MathEqn {
         tempList.shuffle()
         self.multChoiceOptions = tempList
     }
-    
-    
 }

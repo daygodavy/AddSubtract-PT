@@ -25,6 +25,7 @@ class IntroViewController: UIViewController {
         self.setupView()
     }
     
+    // configure UI elements for the view
     func setupView() {
         headerBG.layer.cornerRadius = 10
         headerBG.clipsToBounds = true
@@ -32,11 +33,6 @@ class IntroViewController: UIViewController {
         headerBG.layer.masksToBounds = true
         headerBG.contentMode = .scaleToFill
         headerBG.layer.borderWidth = 7
-        
-//        headerBG.layer.shadowColor = UIColor.black.cgColor
-//        headerBG.layer.shadowOffset = CGSize(width: 20, height: 20)
-//        headerBG.layer.shadowRadius = 10
-//        headerBG.layer.shadowOpacity = 1.0
         
         bodyBG.layer.cornerRadius = 10
         bodyBG.clipsToBounds = true
@@ -50,8 +46,6 @@ class IntroViewController: UIViewController {
         gradientMaskLayer.colors = [UIColor.clear.cgColor, UIColor.white.cgColor, UIColor.white.cgColor, UIColor.clear.cgColor]
         gradientMaskLayer.locations = [0, 0.1, 0.9, 1]
         baseBG.layer.mask = gradientMaskLayer
-        //        view.addSubview(maskedView)
-        
         
         addButton.layer.shadowColor = UIColor.black.cgColor
         addButton.layer.shadowOffset = CGSize(width: 2, height: 2)
@@ -69,30 +63,28 @@ class IntroViewController: UIViewController {
         headerTextLabel.layer.shadowOpacity = 1.0
     }
     
+    // initiates addition problems after user selects the add button
     @IBAction func addButtonPressed(_ sender: Any) {
         self.newEqn = MathEqn.init(choseAdd: true)
         navigateToProblemSolveVC()
         
     }
     
+    // initiates subtraction problems after user selects the subtract button
     @IBAction func subButtonPressed(_ sender: Any) {
         self.newEqn = MathEqn.init(choseAdd: false)
         navigateToProblemSolveVC()
     }
     
     
+    // segue to problem solving view
     func navigateToProblemSolveVC() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let problemSolveVC = storyboard.instantiateViewController(withIdentifier: "ProblemSolveViewController") as! ProblemSolveViewController
         problemSolveVC.currEqn = self.newEqn
         problemSolveVC.modalPresentationStyle = .fullScreen
         self.present(problemSolveVC, animated: true, completion: nil)
-        
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let MainTabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as! MainTabBarController
-//        MainTabBarController.chosenDevice = profiles[idx]
-//        MainTabBarController.modalPresentationStyle = .fullScreen
-//        self.present(MainTabBarController, animated: true, completion: nil)
+
     }
 
 }
