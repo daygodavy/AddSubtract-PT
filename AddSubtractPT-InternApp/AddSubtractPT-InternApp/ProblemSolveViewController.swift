@@ -22,6 +22,7 @@ class ProblemSolveViewController: UIViewController {
     @IBOutlet weak var eqnTypeLabel: UILabel!
     
     @IBOutlet weak var finalScoreLabel: UILabel!
+    @IBOutlet weak var startOverLabel: UIButton!
     
     @IBOutlet var answerButtons: [UIButton]!
     
@@ -38,6 +39,24 @@ class ProblemSolveViewController: UIViewController {
     }
     
     func setupView() {
+        for button in self.answerButtons {
+            button.layer.shadowColor = UIColor.black.cgColor
+            button.layer.shadowOffset = CGSize(width: 2, height: 2)
+            button.layer.shadowRadius = 5
+            button.layer.shadowOpacity = 1.0
+        }
+        
+        self.correctCountLabel.layer.shadowColor = UIColor.black.cgColor
+        self.correctCountLabel.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.correctCountLabel.layer.shadowRadius = 3
+        self.correctCountLabel.layer.shadowOpacity = 1.0
+        self.wrongCountLabel.layer.shadowColor = UIColor.black.cgColor
+        self.wrongCountLabel.layer.shadowOffset = CGSize(width: 2, height: 2)
+        self.wrongCountLabel.layer.shadowRadius = 3
+        self.wrongCountLabel.layer.shadowOpacity = 1.0
+        
+
+        
         
     }
     
@@ -98,7 +117,7 @@ class ProblemSolveViewController: UIViewController {
         
         
         // delay (3sec) then reset and initiate next matheqn
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
             self.solutionNumLabel.text = ""
             
@@ -124,7 +143,7 @@ class ProblemSolveViewController: UIViewController {
         }
         else {
             // delay (3sec) then reset and initiate next matheqn
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                 self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
                 self.solutionNumLabel.text = ""
                 
@@ -155,12 +174,28 @@ class ProblemSolveViewController: UIViewController {
     }
     
     func initiateGameOver() {
+        self.setupGameoverView()
         for button in self.answerButtons { button.isHidden = true }
         self.solutionNumLabel.text = ""
-        self.finalScoreLabel.text = "FINAL SCORE: \(self.correctCounter)"
         self.finalScoreLabel.textColor = .black
-        self.finalScoreLabel.font = UIFont(name: "CharterRoman", size: self.finalScoreLabel.font.pointSize)
+        self.finalScoreLabel.font = UIFont(name: "Charter-BoldItalic", size: 43)
+        self.finalScoreLabel.text = "FINAL SCORE: \(self.correctCounter)"
+        self.finalScoreLabel.font = self.finalScoreLabel.font.withSize(43)
         self.gameoverBG.isHidden = false
+    }
+    
+    func setupGameoverView() {
+        self.gameoverBG.layer.cornerRadius = 10
+        self.gameoverBG.clipsToBounds = true
+        self.gameoverBG.layer.borderColor = UIColor(red: 0.498, green: 0.3137, blue: 0, alpha: 1.0).cgColor
+        self.gameoverBG.layer.masksToBounds = true
+        self.gameoverBG.contentMode = .scaleToFill
+        self.gameoverBG.layer.borderWidth = 7
+        
+        self.startOverLabel.layer.shadowColor = UIColor.black.cgColor
+        self.startOverLabel.layer.shadowRadius = 3
+//        self.startOverLabel.layer.shadowOffset
+        self.startOverLabel.layer.shadowOpacity = 0.2
     }
     
     @IBAction func answerButtonPressed(_ sender: UIButton) {
@@ -188,57 +223,6 @@ class ProblemSolveViewController: UIViewController {
     @IBAction func startoverButtonPressed(_ sender: Any) {
          presentingViewController?.dismiss(animated: true, completion: nil)
     }
-    
-    
-//    @IBAction func answerAPressed(_ sender: Any) {
-//        if let check = self.answerButtons[0].titleLabel?.text {
-//            if checkAnswer(ans: Int(check)!) {
-//                // answer is correct!
-//                self.correctAnswer()
-//            }
-//            else {
-//                // answer is incorrect
-//                self.incorrectAnswer()
-//            }
-//        }
-//    }
-//
-//    @IBAction func answerBPressed(_ sender: Any) {
-//        if let check = self.answerButtons[1].titleLabel?.text {
-//            if checkAnswer(ans: Int(check)!) {
-//                // answer is correct!
-//                self.correctAnswer()
-//            }
-//            else {
-//                // answer is incorrect
-//                self.incorrectAnswer()
-//            }
-//        }
-//    }
-//
-//    @IBAction func answerCPressed(_ sender: Any) {
-//        if let check = self.answerButtons[2].titleLabel?.text {
-//            if checkAnswer(ans: Int(check)!) {
-//                // answer is correct!
-//                self.correctAnswer()
-//            }
-//            else {
-//                // answer is incorrect
-//                self.incorrectAnswer()
-//            }
-//        }
-//    }
-//
-//    @IBAction func answerDPressed(_ sender: Any) {
-//        if let check = self.answerButtons[3].titleLabel?.text {
-//            if checkAnswer(ans: Int(check)!) {
-//                // answer is correct!
-//            }
-//            else {
-//                // answer is incorrect
-//            }
-//        }
-//    }
     
     
 }
