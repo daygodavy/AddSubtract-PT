@@ -10,6 +10,7 @@ import UIKit
 
 class ProblemSolveViewController: UIViewController {
     @IBOutlet weak var chalkboardBG: UIView!
+    @IBOutlet weak var gameoverBG: UIView!
     
     @IBOutlet weak var correctCountLabel: UILabel!
     @IBOutlet weak var wrongCountLabel: UILabel!
@@ -19,6 +20,8 @@ class ProblemSolveViewController: UIViewController {
     @IBOutlet weak var solutionNumLabel: UILabel! //
     
     @IBOutlet weak var eqnTypeLabel: UILabel!
+    
+    @IBOutlet weak var finalScoreLabel: UILabel!
     
     @IBOutlet var answerButtons: [UIButton]!
     
@@ -63,12 +66,12 @@ class ProblemSolveViewController: UIViewController {
         if let check = self.answerButtons[idx].titleLabel?.text {
             if matchAnswer(ans: Int(check)!) {
                 // answer is correct!
-                self.correctAnswer(idx: idx)
+                self.setCorrectAnswer(idx: idx)
                 
             }
             else {
                 // answer is incorrect
-                self.incorrectAnswer(idx: idx)
+                self.setIncorrectAnswer(idx: idx)
             }
         }
     }
@@ -80,7 +83,7 @@ class ProblemSolveViewController: UIViewController {
         return false
     }
     
-    func correctAnswer(idx: Int) {
+    func setCorrectAnswer(idx: Int) {
         self.answerButtons[idx].setTitleColor(UIColor.green, for: .normal)
         
         // increment correct counter
@@ -90,6 +93,7 @@ class ProblemSolveViewController: UIViewController {
         // check if 10th round, if rd 10, then prompt message to home
         if self.correctCounter + self.wrongCounter == 10 {
             // game over
+            self.initiateGameOver()
         }
         
         
@@ -106,7 +110,7 @@ class ProblemSolveViewController: UIViewController {
         
     }
     
-    func incorrectAnswer(idx: Int) {
+    func setIncorrectAnswer(idx: Int) {
         self.answerButtons[idx].setTitleColor(UIColor.red, for: .normal)
         
         // increment decrement counter
@@ -116,17 +120,20 @@ class ProblemSolveViewController: UIViewController {
         // check if 10th round, if rd 10, then prompt message to home
         if self.correctCounter + self.wrongCounter == 10 {
             // game over
+            self.initiateGameOver()
+        }
+        else {
+            // delay (3sec) then reset and initiate next matheqn
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
+                self.solutionNumLabel.text = ""
+                
+                self.regenNewEqn()
+                
+                for button in self.answerButtons { button.isUserInteractionEnabled = true }
+            }
         }
         
-        // delay (3sec) then reset and initiate next matheqn
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-            self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
-            self.solutionNumLabel.text = ""
-            
-            self.regenNewEqn()
-            
-            for button in self.answerButtons { button.isUserInteractionEnabled = true }
-        }
     }
     
     func regenNewEqn() {
@@ -147,6 +154,15 @@ class ProblemSolveViewController: UIViewController {
         }
     }
     
+    func initiateGameOver() {
+        for button in self.answerButtons { button.isHidden = true }
+        self.solutionNumLabel.text = ""
+        self.finalScoreLabel.text = "FINAL SCORE: \(self.correctCounter)"
+        self.finalScoreLabel.textColor = .black
+        self.finalScoreLabel.font = UIFont(name: "CharterRoman", size: self.finalScoreLabel.font.pointSize)
+        self.gameoverBG.isHidden = false
+    }
+    
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         for button in self.answerButtons { button.isUserInteractionEnabled = false }
         
@@ -164,11 +180,15 @@ class ProblemSolveViewController: UIViewController {
             self.checkAnswer(idx: 3)
             print("D")
         default:
-            print("FUCK")
             break
         }
         print("DONE")
     }
+    
+    @IBAction func startoverButtonPressed(_ sender: Any) {
+         presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
     
 //    @IBAction func answerAPressed(_ sender: Any) {
 //        if let check = self.answerButtons[0].titleLabel?.text {
