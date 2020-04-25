@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5B6FEBC62453B23A00EFEA1D /* IntroViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FEBC52453B23A00EFEA1D /* IntroViewController .swift */; };
+		5B6FEBC62453B23A00EFEA1D /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FEBC52453B23A00EFEA1D /* IntroViewController.swift */; };
+		5B6FEBC82453D5A400EFEA1D /* MathEqnsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FEBC72453D5A400EFEA1D /* MathEqnsModel.swift */; };
+		5B6FEBCA2453D5C000EFEA1D /* ProblemSolveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B6FEBC92453D5C000EFEA1D /* ProblemSolveViewController.swift */; };
 		5BBF19D92452E07800567856 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF19D82452E07800567856 /* AppDelegate.swift */; };
 		5BBF19DB2452E07800567856 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF19DA2452E07800567856 /* SceneDelegate.swift */; };
 		5BBF19DD2452E07800567856 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BBF19DC2452E07800567856 /* ViewController.swift */; };
@@ -37,7 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		5B6FEBC52453B23A00EFEA1D /* IntroViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "IntroViewController .swift"; sourceTree = "<group>"; };
+		5B6FEBC52453B23A00EFEA1D /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		5B6FEBC72453D5A400EFEA1D /* MathEqnsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathEqnsModel.swift; sourceTree = "<group>"; };
+		5B6FEBC92453D5C000EFEA1D /* ProblemSolveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSolveViewController.swift; sourceTree = "<group>"; };
 		5BBF19D52452E07800567856 /* AddSubtractPT-InternApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AddSubtractPT-InternApp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BBF19D82452E07800567856 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BBF19DA2452E07800567856 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,7 +115,9 @@
 				5BBF19E62452E07A00567856 /* LaunchScreen.storyboard */,
 				5BBF19E92452E07A00567856 /* Info.plist */,
 				5BBF19E12452E07800567856 /* AddSubtractPT_InternApp.xcdatamodeld */,
-				5B6FEBC52453B23A00EFEA1D /* IntroViewController .swift */,
+				5B6FEBC52453B23A00EFEA1D /* IntroViewController.swift */,
+				5B6FEBC72453D5A400EFEA1D /* MathEqnsModel.swift */,
+				5B6FEBC92453D5C000EFEA1D /* ProblemSolveViewController.swift */,
 			);
 			path = "AddSubtractPT-InternApp";
 			sourceTree = "<group>";
@@ -265,10 +271,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B6FEBCA2453D5C000EFEA1D /* ProblemSolveViewController.swift in Sources */,
 				5BBF19DD2452E07800567856 /* ViewController.swift in Sources */,
 				5BBF19E32452E07800567856 /* AddSubtractPT_InternApp.xcdatamodeld in Sources */,
-				5B6FEBC62453B23A00EFEA1D /* IntroViewController .swift in Sources */,
+				5B6FEBC62453B23A00EFEA1D /* IntroViewController.swift in Sources */,
 				5BBF19D92452E07800567856 /* AppDelegate.swift in Sources */,
+				5B6FEBC82453D5A400EFEA1D /* MathEqnsModel.swift in Sources */,
 				5BBF19DB2452E07800567856 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
