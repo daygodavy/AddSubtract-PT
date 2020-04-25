@@ -94,7 +94,7 @@ class ProblemSolveViewController: UIViewController {
         
         
         // delay (3sec) then reset and initiate next matheqn
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
             self.solutionNumLabel.text = ""
             
@@ -119,7 +119,7 @@ class ProblemSolveViewController: UIViewController {
         }
         
         // delay (3sec) then reset and initiate next matheqn
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             self.answerButtons[idx].setTitleColor(UIColor.white, for: .normal)
             self.solutionNumLabel.text = ""
             
